@@ -33,12 +33,12 @@ export const loginController= async(req,res)=>{
         res.status(200).cookie('accessToken',accessToken,{
             httpOnly:true,
             secure:true,
-            sameSite:'strict',
+            sameSite:'none',
             maxAge: 60*60*1000
         }).cookie('refreshToken',refreshToken,{
             httpOnly:true,
             secure:true,
-            sameSite:'strict',
+            sameSite:'none',
             maxAge: 7*24*60*60*1000
         }).json({
             message:"Login Succesfully",
@@ -65,7 +65,7 @@ export const refreshTokenController = async(req,res)=>{
         const refreshToken = req.cookies.refreshToken
 
         if(!refreshToken){
-            res.status(401).json({
+           return res.status(401).json({
                 message:"No Refresh token found"
             })
         }
@@ -74,7 +74,7 @@ export const refreshTokenController = async(req,res)=>{
         const user = await userModel.findById(decoded.id)
 
         if(!user){
-            res.status(401).json({
+           return res.status(401).json({
                 message:"User not found"
             })
         }
@@ -82,7 +82,7 @@ export const refreshTokenController = async(req,res)=>{
         res.status(200).cookie('accessToken' , accessToken,{
              httpOnly:true,
             secure:true,
-            sameSite:'strict',
+            sameSite:'none',
             maxAge: 60*60*1000
         }).json({
             message:"AccessToken refreshed Succesfully"
