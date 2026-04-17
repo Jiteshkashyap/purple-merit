@@ -3,6 +3,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
+import helmet from 'helmet'
 
 import authRoutes from './routes/authRoutes.js'
 import userRoutes from './routes/userRoutes.js'
@@ -12,6 +13,12 @@ dotenv.config()
 
 const app = express()
 connectDB()
+
+app.use(
+  helmet({
+    contentSecurityPolicy: false, 
+  })
+);
 
 
 app.use(
