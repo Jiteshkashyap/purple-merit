@@ -3,7 +3,7 @@ import store from "../redux/store";
 import { setUser, logoutUser } from "../redux/authSlice";
 
 const api = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://purple-merit-xr2k.onrender.com/api",
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
