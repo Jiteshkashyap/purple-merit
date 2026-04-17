@@ -84,7 +84,7 @@ JWT_SECRET=your_secret_key
 🛠 Installation & Setup
 
 Clone repo
-git clone https://github.com/your-username/user-management-system.git
+git clone https://github.com/Jiteshkashyap/purple-merit
 cd user-management-system
 
 Backend
