@@ -3,7 +3,7 @@ import MainLayout from "../components/layout/MainLayout";
 import SearchInput from "../components/common/SearchInput";
 import FilterDropdown from "../components/common/FilterDropdown";
 import StatusBadge from "../components/common/StatusBadge";
-import UserModal from "../components/common/UserModal";
+import UserModal from "../components/common/userModal";
 import Pagination from "../components/common/Pagination";
 import { showSuccess, showError } from "../utils/toast";
 import { showLoader, hideLoader } from "../redux/uiSlice";
